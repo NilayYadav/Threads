@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A104971D2AE2A07C000C01E0 /* ProfileThreadFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A104971C2AE2A07C000C01E0 /* ProfileThreadFilter.swift */; };
 		A1344F792ADFB5D10091C262 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1344F782ADFB5D10091C262 /* FeedView.swift */; };
 		A1344F832ADFB6910091C262 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1344F822ADFB6910091C262 /* ProfileView.swift */; };
 		A1344F852ADFB6AD0091C262 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1344F842ADFB6AD0091C262 /* ActivityView.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A104971C2AE2A07C000C01E0 /* ProfileThreadFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileThreadFilter.swift; sourceTree = "<group>"; };
 		A1344F782ADFB5D10091C262 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		A1344F822ADFB6910091C262 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		A1344F842ADFB6AD0091C262 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
@@ -56,6 +58,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A104971B2AE2A06D000C01E0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A104971C2AE2A07C000C01E0 /* ProfileThreadFilter.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A1344F762ADFB5C10091C262 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +134,7 @@
 		A1344F802ADFB6800091C262 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				A104971B2AE2A06D000C01E0 /* Model */,
 				A1344F812ADFB6850091C262 /* Views */,
 			);
 			path = Profile;
@@ -357,6 +368,7 @@
 				A1344F792ADFB5D10091C262 /* FeedView.swift in Sources */,
 				A13D05372AE2738100B63045 /* UserCell.swift in Sources */,
 				A1C88DE92ADBFC4D00F475BB /* LoginView.swift in Sources */,
+				A104971D2AE2A07C000C01E0 /* ProfileThreadFilter.swift in Sources */,
 				A1C88DD42ADBFB9300F475BB /* ContentView.swift in Sources */,
 				A13F33372ADC36AE00D2DEDE /* ThreadsTabView.swift in Sources */,
 				A1344F852ADFB6AD0091C262 /* ActivityView.swift in Sources */,
