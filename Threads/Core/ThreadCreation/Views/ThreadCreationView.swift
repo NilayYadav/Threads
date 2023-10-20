@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct UploadView: View {
+struct ThreadCreation: View {
     var body: some View {
         Text("Hello, Upload!")
     }
 }
 
 #Preview {
-    UploadView()
+    ThreadCreation()
 }
