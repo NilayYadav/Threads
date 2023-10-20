@@ -9,7 +9,11 @@ import SwiftUI
 
 struct CircularImageProfileView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Image("batman")
+            .resizable()
+            .scaledToFill()
+            .frame(width: 40, height: 40)
+            .clipShape(.circle)
     }
 }
 
