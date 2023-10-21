@@ -18,6 +18,9 @@
 		A13F33312ADC309F00D2DEDE /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13F33302ADC309F00D2DEDE /* RegistrationView.swift */; };
 		A13F33342ADC33E900D2DEDE /* ThreadsTextFieldModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13F33332ADC33E900D2DEDE /* ThreadsTextFieldModifiers.swift */; };
 		A13F33372ADC36AE00D2DEDE /* ThreadsTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13F33362ADC36AE00D2DEDE /* ThreadsTabView.swift */; };
+		A176E27B2AE3EC6B007F611A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A176E27A2AE3EC6B007F611A /* User.swift */; };
+		A176E27D2AE3EF9B007F611A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A176E27C2AE3EF9B007F611A /* UserService.swift */; };
+		A176E2802AE3F0D2007F611A /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A176E27F2AE3F0D2007F611A /* ProfileViewModel.swift */; };
 		A19A2F112AE2634E00DECE83 /* ThreadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19A2F102AE2634E00DECE83 /* ThreadCell.swift */; };
 		A1AC1FC12AE39DB200882C62 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1AC1FC02AE39DB200882C62 /* GoogleService-Info.plist */; };
 		A1AC1FC42AE39E4400882C62 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = A1AC1FC32AE39E4400882C62 /* FirebaseAnalytics */; };
@@ -71,6 +74,9 @@
 		A13F33302ADC309F00D2DEDE /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		A13F33332ADC33E900D2DEDE /* ThreadsTextFieldModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsTextFieldModifiers.swift; sourceTree = "<group>"; };
 		A13F33362ADC36AE00D2DEDE /* ThreadsTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadsTabView.swift; sourceTree = "<group>"; };
+		A176E27A2AE3EC6B007F611A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A176E27C2AE3EF9B007F611A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		A176E27F2AE3F0D2007F611A /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		A19A2F102AE2634E00DECE83 /* ThreadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadCell.swift; sourceTree = "<group>"; };
 		A1AC1FC02AE39DB200882C62 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A1AC1FFB2AE3A02900882C62 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
@@ -200,6 +206,7 @@
 		A1344F802ADFB6800091C262 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				A176E27E2AE3F0C7007F611A /* ViewModel */,
 				A1D16F3F2AE2CF370043EF5E /* EditProfile */,
 				A104971B2AE2A06D000C01E0 /* Model */,
 				A1344F812ADFB6850091C262 /* Views */,
@@ -238,6 +245,14 @@
 				A13F33362ADC36AE00D2DEDE /* ThreadsTabView.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		A176E27E2AE3F0C7007F611A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A176E27F2AE3F0D2007F611A /* ProfileViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		A1AC1FF92AE39FFF00882C62 /* ViewModel */ = {
@@ -346,6 +361,7 @@
 		A1C88DE22ADBFBD400F475BB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A176E27A2AE3EC6B007F611A /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -353,6 +369,7 @@
 		A1C88DE32ADBFBDD00F475BB /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A176E27C2AE3EF9B007F611A /* UserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -519,6 +536,7 @@
 				A1AC1FFE2AE3A11800882C62 /* AuthService.swift in Sources */,
 				A1D16F432AE2D0340043EF5E /* EditProfileView.swift in Sources */,
 				A1344F832ADFB6910091C262 /* ProfileView.swift in Sources */,
+				A176E27D2AE3EF9B007F611A /* UserService.swift in Sources */,
 				A1344F872ADFB6C10091C262 /* ThreadCreationView.swift in Sources */,
 				A19A2F112AE2634E00DECE83 /* ThreadCell.swift in Sources */,
 				A1AC20042AE3A90000882C62 /* LoginViewModel.swift in Sources */,
@@ -527,12 +545,14 @@
 				A1C88DE92ADBFC4D00F475BB /* LoginView.swift in Sources */,
 				A104971D2AE2A07C000C01E0 /* ProfileThreadFilter.swift in Sources */,
 				A1AC20022AE3A54D00882C62 /* ContentViewModel.swift in Sources */,
+				A176E2802AE3F0D2007F611A /* ProfileViewModel.swift in Sources */,
 				A1C88DD42ADBFB9300F475BB /* ContentView.swift in Sources */,
 				A13F33372ADC36AE00D2DEDE /* ThreadsTabView.swift in Sources */,
 				A1344F852ADFB6AD0091C262 /* ActivityView.swift in Sources */,
 				A13F33342ADC33E900D2DEDE /* ThreadsTextFieldModifiers.swift in Sources */,
 				A1C88DD22ADBFB9300F475BB /* ThreadsApp.swift in Sources */,
 				A13F33312ADC309F00D2DEDE /* RegistrationView.swift in Sources */,
+				A176E27B2AE3EC6B007F611A /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

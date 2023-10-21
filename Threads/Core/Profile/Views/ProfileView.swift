@@ -9,8 +9,13 @@ import SwiftUI
 
 struct ProfileView: View {
     
+    @StateObject var viewModel = ProfileViewModel()
     @State private var selectedFilter: ProfileThreadFilter = .threads
     @Namespace var animation
+    
+    private var currentUser: User? {
+        return viewModel.currentUser
+    }
     
     private var filterBarWidth: CGFloat {
         let count = CGFloat(ProfileThreadFilter.allCases.count)
@@ -24,17 +29,19 @@ struct ProfileView: View {
                     HStack(alignment: .top) {
                         VStack(alignment: .leading, spacing: 12) {
                             VStack(alignment: .leading, spacing: 4) {
-                                Text("Batman")
+                                Text(currentUser?.fullname ?? "")
                                     .font(.title2)
                                     .fontWeight(.semibold)
                                 
-                                Text("Batman")
+                                Text(currentUser?.username ?? "")
                                     .font(.subheadline)
                             }
                             
-                            Text("I'm Batman")
-                                .font(.footnote)
-                            
+                            if let bio = currentUser?.bio {
+                                Text(bio)
+                                    .font(.footnote)
+                            }
+                    
                             Text("2 Followers")
                                 .font(.caption)
                                 .foregroundColor(.gray)
