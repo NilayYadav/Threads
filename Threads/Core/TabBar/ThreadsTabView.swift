@@ -32,9 +32,9 @@ struct ThreadsTabView: View {
             Text("")
                 .tabItem {
                     Image(systemName: "plus")
-            }
-            .onAppear { selectedTab = 2 }
-            .tag(2)
+                }
+                .onAppear { selectedTab = 2 }
+                .tag(2)
             
             ActivityView()
                 .tabItem {
@@ -44,7 +44,7 @@ struct ThreadsTabView: View {
                 .onAppear { selectedTab = 3 }
                 .tag(3)
             
-            ProfileView()
+            CurrentUserProfileView()
                 .tabItem {
                     Image(systemName: selectedTab == 4 ? "person.fill" : "person")
                         .environment(\.symbolVariants, selectedTab == 4 ?.fill : .none)
