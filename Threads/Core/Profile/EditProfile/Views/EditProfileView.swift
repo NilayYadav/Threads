@@ -6,13 +6,17 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct EditProfileView: View {
     
+    let user: User
     @State private var bio = ""
     @State private var link = ""
     @State private var isPrivateProfile = false
-
+    @Environment(\.dismiss) var dismiss
+    @StateObject var viewModel = EditProfileViewModel()
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -22,16 +26,26 @@ struct EditProfileView: View {
                 VStack {
                     HStack {
                         VStack(alignment: .leading) {
-                            Text("Name")
+                            Text(user.fullname)
                                 .fontWeight(.semibold)
                             
-                            Text("Batman")
-
+                            Text(user.username)
+                            
                         }
                         
                         Spacer()
                         
-                        CircularImageProfileView()
+                        PhotosPicker(selection: $viewModel.selectedItem) {
+                            if let image = viewModel.profileImage {
+                                image
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 40, height: 40)
+                                    .clipShape(Circle())
+                            } else {
+                                CircularImageProfileView(user: user, size: .small)
+                            }
+                        }
                     }
                     
                     Divider()
@@ -39,18 +53,18 @@ struct EditProfileView: View {
                     // Bio
                     
                     VStack(alignment: .leading) {
-                            Text("Bio")
-                                .fontWeight(.semibold)
-                            
+                        Text("Bio")
+                            .fontWeight(.semibold)
+                        
                         TextField("Enter your bio...", text: $bio, axis: .vertical)
                     }
                     
                     Divider()
                     
                     VStack(alignment: .leading) {
-                            Text("Link")
-                                .fontWeight(.semibold)
-                            
+                        Text("Link")
+                            .fontWeight(.semibold)
+                        
                         TextField("Add link...", text: $link)
                     }
                     
@@ -74,14 +88,17 @@ struct EditProfileView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("Cancel") {
-                        
+                        dismiss()
                     }
                     .font(.subheadline)
                     .foregroundColor(.black)
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Done") {
-                        
+                        Task { 
+                            try await viewModel.updateUserData()
+                            dismiss()
+                        }
                     }
                     .font(.subheadline)
                     .foregroundColor(.black)
@@ -93,5 +110,5 @@ struct EditProfileView: View {
 }
 
 #Preview {
-    EditProfileView()
+    EditProfileView(user: DeveloperPreview.shared.user)
 }
