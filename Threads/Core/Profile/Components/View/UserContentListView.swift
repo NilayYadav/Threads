@@ -48,7 +48,7 @@ struct UserContentListView: View {
         
         LazyVStack {
             ForEach (0 ... 10, id: \.self) { thread in
-                ThreadCell()
+//                ThreadCell()
             }
         }
         
